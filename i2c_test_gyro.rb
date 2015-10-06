@@ -20,7 +20,7 @@
  l3gd20 = I2C.new(bus_address, sle_address)
  l3gd20.i2c_get(sle_address, power_enable, setval)
 
- time = Time.new
+ time = Time.now
  30.times do
    puts ([Time.new - time] + mult(l3gd20.averageB(x_address, ave))).join(',')
  end
